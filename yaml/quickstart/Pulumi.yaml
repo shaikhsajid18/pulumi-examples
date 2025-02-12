@@ -1,0 +1,12 @@
+name: s3-bucket-example
+runtime: yaml
+description: A simple S3 bucket using Pulumi YAML
+resources:
+  myBucket:
+    type: aws:s3:Bucket
+    properties:
+      bucket: my-example-yaml-bucket
+      acl: private
+outputs:
+  bucketName: ${myBucket.bucket}
+  bucketArn: ${myBucket.arn}
